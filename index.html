@@ -5,18 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <section>
-        <nav></nav>
+<body class="bg-white min-h-screen mulish">
+    <section class="container mx-auto  ">
+        <nav>
+            <div class="navbar">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li class="tooltip  tooltip-bottom" data-tip="Home"><a><img src=" images/Frame 2.png" alt=""
+                                        srcset=""></a>
+                            </li>
+                            <li class="tooltip tooltip-bottom " data-tip="ToolTip"><a><img src=" images/Frame 3.png"
+                                        alt="" srcset=""></a>
+                            </li>
+                            <li class="tooltip tooltip-bottom" data-tip="Friends"><a><img src=" images/Frame 4.png"
+                                        alt="" srcset=""></a>
+                            </li>
+                            <li class="tooltip tooltip-bottom" data-tip="Flag"><a><img src=" images/Frame 5.png" alt=""
+                                        srcset=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-4xl text-black font-bold">ReTro</a>
+                </div>
+                <div class="navbar-end hidden lg:flex mt-4 ">
+                    <ul class="menu menu-horizontal px-1">
+                        <li class="tooltip tooltip-bottom" data-tip="Home"><a><img src=" images/Frame 2.png" alt=""
+                                    srcset=""></a>
+                        </li>
+                        <li class="tooltip tooltip-bottom" data-tip="ToolTip"><a><img src=" images/Frame 3.png" alt=""
+                                    srcset=""></a>
+                        </li>
+                        <li class="tooltip tooltip-bottom" data-tip="Friends"><a><img src=" images/Frame 4.png" alt=""
+                                    srcset=""></a>
+                        </li>
+                        <li class="tooltip tooltip-bottom" data-tip="Flag"><a><img src=" images/Frame 5.png" alt=""
+                                    srcset=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-end w-36 h-14 ">
+                    <a class="btn border-none text-white bg-[#797DFC] w-36 h-14 rounded-full">Sign In</a>
+                </div>
+            </div>
+        </nav>
+
+        <section
+            class="bg-[url('/images/bgbanner.png')] bg-no-repeat bg-[#12132D] bg-contain bg-bottom h-[550px] rounded-3xl ">
+            <div class="mx-4 md:mx-16 pt-32 md:flex    ">
+                <div class="w-3/6   ">
+                    <h1 class="text-6xl font-bold text-white  ">Welcome to the </h1>
+                    <h1 class="mt-8 text-6xl font-bold bg-gradient-to-r from-[#797DFC] text-transparent bg-clip-text ">
+                        ReTro</h1>
+
+                    <p class="mt-7 text-xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                    <label class="input input-bordered w-96 flex items-center gap-2 rounded-3xl bg-white mt-8
+                    ">
+                        <input type="text" class="grow" placeholder="Search" />
+                        <button
+                            class="  py-4 bg-[#797DFC] rounded-full badge badge-info   border-none text-white ">Search</button>
+                    </label>
+                </div>
+                <div class=" bg-white w-80 max-h-60  md:ml-80 rounded-3xl">
+                    <div class="mx-8 text-black my-12 flex gap-4 ">
+                        <div>
+                            <h1 class="">Registered Users </h1>
+                            <h1 class="mt-4">Forum </h1>
+                            <h1 class="mt-4">Topics </h1>
+                            <h1 class="mt-4">Replies</h1>
+                        </div>
+                        <div>
+                            <h1 class="">01 </h1>
+                            <h1 class="mt-4">05 </h1>
+                            <h1 class="mt-4">01 </h1>
+                            <h1 class="mt-4">01</h1>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </section>
 
     </section>
 
-    <main></main>
+    <main class=" container mx-auto "></main>
+    <section>
+        <div class="text-center mt-60 md:mt-24 ">
+            <h1 class="text-black text-6xl font-bold my-6">Let’s Discuss</h1>
+            <p class="text-black">Yes, you can run unit tests and view the results directly within the app.
+                <br>The integrated testing features
+                allow for a streamlined .
+            </p>
+        </div>
+
+        <div class="flex container mx-auto">
+            <div id="display-retro" class="">
+            </div>
+            <div id="newContant" class=" mt-10 h-[465px] ml-6 bg-[#F3F3F5] w-[450px] rounded-2xl">
+                <div class="mx-8 p-4 flex justify-between text-black font-bold text-lg">
+                    <div>Titel</div>
+                    <div>Mark as read (0)</div>
+                </div>
+                <div class="flex justify-between  text-black bg-white mx-8 p-4 rounded-3xl">
+                    <h1>10 Kids Unaware of <br>Their Halloween Costume</h1>
+                    <div class="flex gap-3 ">
+                        <img class="w-7 h-7" src="images/Group 16.png" alt="">
+                        <p>1500</p>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- <div -->
+    <!-- class="card hover:bg-[#797DFC1A]  bg-[#F3F3F5] w-[400px] md:w-[772px] h-[270px] md:h-[270px]  text-primary-content mt-10"> -->
+    <!-- <div class="p-10 flex">
+            <div class=""> <img src="images/Frame 2.png" alt=""></div>
+            <div class="ml-6">
+                <div class="flex gap-2">
+                    <p># Music</p>
+                    <p>Author : Awlad Hossain</p>
+                </div>
+                <div class=" border-dashed border-gray-500 border-b-2 pt-4">
+                    <p class="">10 Kids Unaware of Their Halloween Costume</p>
+                    <p class="my-4">It’s one thing to subject yourself to ha Halloween costume mishap because, hey
+                        that’s your
+                        prerogative</p>
+                </div>
+
+                <div class="flex justify-between mt-4">
+                    <div class="flex gap-3">
+                        <img src="images/Group 13.png" alt="" srcset="">
+                        <p>560</p>
+                        <img src="images/Group 16.png" alt="" srcset="">
+                        <p>1,568</p>
+                        <img src="images/Group 18.png" alt="" srcset="">
+                        <p>5 min</p>
+                    </div>
+                    <div> <img src="images/Group 40106.png" alt=""></div>
+                </div>
+            </div>
+        </div> -->
+
+    <!-- </div> -->
+    <!-- </div> -->
 
     <footer></footer>
-    <script src="jsfolder/app.js"></script>
+    <script src=" jsfolder/app.js">
+    </script>
 </body>
 
 </html>
