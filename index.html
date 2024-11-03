@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro</title>
-
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -75,8 +74,8 @@
                     <p class="mt-7 text-xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
                     <label class="input input-bordered w-96 flex items-center gap-2 rounded-3xl bg-white mt-8
                     ">
-                        <input type="text" class="grow" placeholder="Search" />
-                        <button
+                        <input type="text" id="searching" class="grow" placeholder="Search" />
+                        <button onclick="searchingHandle()"
                             class="  py-4 bg-[#797DFC] rounded-full badge badge-info   border-none text-white ">Search</button>
                     </label>
                 </div>
@@ -108,35 +107,73 @@
 
     </section>
 
-    <main class=" container mx-auto "></main>
-    <section>
-        <div class="text-center mt-60 md:mt-24 ">
-            <h1 class="text-black text-6xl font-bold my-6">Let’s Discuss</h1>
-            <p class="text-black">Yes, you can run unit tests and view the results directly within the app.
-                <br>The integrated testing features
-                allow for a streamlined .
-            </p>
-        </div>
+    <main class=" container mx-auto ">
 
-        <div class="flex container mx-auto">
-            <div id="display-retro" class="mb-10  ">
+
+        <section>
+            <div class="text-center mt-60 md:mt-24 ">
+                <h1 class="text-black text-6xl font-bold my-6">Let’s Discuss</h1>
+                <p class="text-black">Yes, you can run unit tests and view the results directly within the app.
+                    <br>The integrated testing features
+                    allow for a streamlined .
+                </p>
             </div>
-            <div id="newContant" class=" my-10    h-auto ml-6 bg-[#F3F3F5] w-[450px] rounded-2xl">
 
-                <div class="mx-8 p-4 flex justify-between text-black font-bold text-lg ">
-                    <div>Titel</div>
-                    <div>Mark as read <span id="countClick" class="text-green-800">0</span></div>
+            <div class="flex container mx-auto">
+                <div id="display-retro" class="mb-10  ">
                 </div>
-                <!-- <div class="flex justify-between  text-black bg-white mx-8 p-4 rounded-3xl">
-                    <h1>10 Kids Unaware of <br>Their Halloween Costume</h1>
-                    <div class="flex gap-3 ">
-                        <img class="w-7 h-7" src="images/Group 16.png" alt="">
-                        <p>1500</p>
+                <div id="newContant" class=" my-10    h-auto ml-6 bg-[#F3F3F5] w-[465px] rounded-2xl">
 
+                    <div class="mx-8 p-4 flex justify-between text-black font-bold text-lg ">
+                        <div>Titel</div>
+                        <div>Mark as read <span id="countClick" class="text-green-800">0</span></div>
                     </div>
-                </div> -->
+                    <!-- <div class="flex justify-between  text-black bg-white mx-8 p-4 rounded-3xl">
+                        <h1>10 Kids Unaware of <br>Their Halloween Costume</h1>
+                        <div class="flex gap-3 ">
+                            <img class="w-7 h-7" src="images/Group 16.png" alt="">
+                            <p>1500</p>
+    
+                        </div>
+                    </div> -->
+                </div>
+        </section>
+        <section>
+            <!-- forum part -->
+            <div class=" bg-[#12132D] h-[403px]  rounded-3xl">
+                <div class="flex">
+
+                    <div class="py-24 pl-24 ">
+                        <h1 class="text-4xl font-bold text-white my-4">Join Our Forum</h1>
+                        <p class="my-4">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run
+                            unit tests and
+                            view the results directly within the app. </p>
+                        <button class="btn bg-[#797DFC] text-white rounded-full">Registered Now</button>
+                    </div>
+                    <div><img src="images/joinforum.png" alt=""></div>
+                </div>
+
             </div>
-    </section>
+        </section>
+
+        <section>
+            <!-- latest post  -->
+            <div class="text-center mt-50 md:mt-24 ">
+                <h1 class="text-black text-6xl font-bold my-6">Latest Posts</h1>
+                <p class="text-black">Yes, you can run unit tests and view the results directly within the app. <br> The
+                    integrated testing features allow for a streamlined .
+                </p>
+            </div>
+
+            <div class="mt-24">
+                <div id="latestPost" class=" grid grid-cols-3">
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
 
 
     <!-- <div -->
@@ -172,7 +209,10 @@
     <!-- </div> -->
     <!-- </div> -->
 
-    <footer></footer>
+    <footer class="container mx-auto ">
+
+
+    </footer>
     <script src=" jsfolder/app.js">
     </script>
 </body>

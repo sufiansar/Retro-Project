@@ -5,9 +5,29 @@ const retroData = async () => {
   const data = await res.json();
   retroDisplayData(data.posts);
 };
+// searching the catagory
+
+const searchingValue = async (category = "comedy") => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`
+  );
+  const data = await res.json();
+  retroDisplayData(data.posts);
+};
+
+searchingValue();
+
+// searching
+const searchingHandle = () => {
+  const searchingValueofinput = document.getElementById("searching");
+  searchingValueofinput.innerText = "";
+  const valueInput = searchingValueofinput.value?.toLowerCase();
+  searchingValue(valueInput);
+};
 
 const retroDisplayData = (retro) => {
   const displayRetroData = document.getElementById("display-retro");
+  displayRetroData.innerHTML = "";
 
   retro.forEach((retroALLApiData) => {
     const createDiv = document.createElement("div");
@@ -34,7 +54,7 @@ const retroDisplayData = (retro) => {
                 <img src="images/Group 13.png" alt="">
                 <p>560</p>
                 <img src="images/Group 16.png" alt="">
-                <p>1,568</p>
+                <p>${retroALLApiData.view_count}</p>
                 <img src="images/Group 18.png" alt="">
                 <p>5 min</p>
               </div>
@@ -119,7 +139,7 @@ const newContant = (data) => {
   const isExist = selectedIds?.find((fd) => Number(fd == data?.id));
   console.log(isExist);
 
-  if (isExist) return;
+  // if (isExist) return;
 
   const newdiv = document.createElement("div");
   newdiv.setAttribute("id", `${data.id}`);
@@ -127,7 +147,7 @@ const newContant = (data) => {
                     <h1>${data.title}</h1>
                     <div class="flex gap-3 ">
                         <img class="w-7 h-7" src="images/Group 16.png" alt="">
-                        <p>1500</p>
+                        <p>${data.view_count}</p>
                     </div>
                 </div>`;
 
@@ -144,3 +164,47 @@ const countClick = () => {
 };
 
 retroData();
+
+// latest post
+
+const latestPost = async () => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/retro-forum/latest-posts`
+  );
+  const data = await res.json();
+  const apiData = data;
+  latestPostDisplay(apiData);
+};
+
+const latestPostDisplay = (data) => {
+  const currentDiv = document.getElementById("latestPost");
+  data.forEach((dt) => {
+    const newDiv = document.createElement("div");
+    newDiv.classList = "card h-[482px] w-96 shadow-xl border-2 border-gray-400";
+    newDiv.innerHTML = ` <figure>
+                            <img class="w-[326px] h-[190px] mt-6 rounded-lg"
+                                src="${dt.cover_image}"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <div class="flex gap-3">
+                                <img src="images/Frame.png" alt="">
+                                <p>${dt.author.posted_date}</p>
+                            </div>
+                            <div class="text-lg font-bold text-black mt-4">
+                                <h1>${dt.title}</h1>
+                            </div>
+                            <p>${dt.description}</p>
+                            <div class="flex gap-4 mt-4 ">
+                                <div class="w-[44px] h-[44px] "><img class="rounded-full" src="${dt.profile_image}" alt=""></div>
+                                <div class="text-black font-semibold">
+                                    <h1>${dt.author.name}</h1>
+                                    <p>${dt.author.designation}</p>
+                                </div>
+                            </div>
+                        </div>`;
+    // console.log(data);
+    currentDiv.appendChild(newDiv);
+  });
+};
+latestPost();
