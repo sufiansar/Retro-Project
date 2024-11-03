@@ -32,15 +32,15 @@ const retroDisplayData = (retro) => {
   retro.forEach((retroALLApiData) => {
     const createDiv = document.createElement("div");
     createDiv.classList =
-      "card hover:bg-[#797DFC1A] bg-[#F3F3F5] w-[400px] md:w-[772px] h-[300px] md:h-[270px] text-primary-content mt-10";
+      "card hover:bg-[#797DFC1A] bg-[#F3F3F5] w-[250px] md:w-[772px] h-[460px] md:h-[270px] text-primary-content mt-10";
 
     createDiv.innerHTML = `
-        <div class="p-10 flex ">
+        <div class="p-10 md:flex ">
           <div class="w-[72px] h-[72px]"> 
             <img src="${retroALLApiData.image}" alt="">
             <p>${retroALLApiData.isActive}</p>
           </div>
-          <div class="ml-6 w-[300px] md:w-[596px]">
+          <div class="ml-6 w-[180px] md:w-[596px] mt-6 text-left">
             <div class="flex gap-2">
               <p>${retroALLApiData.category}</p>
               <p>${retroALLApiData.author.name}</p>
@@ -49,8 +49,8 @@ const retroDisplayData = (retro) => {
               <p class="">${retroALLApiData.title}</p>
               <p class="my-4">${retroALLApiData.description}</p>
             </div>
-            <div class="flex justify-between mt-4">
-              <div class="flex gap-3">
+            <div class="flex justify-between mt-4  w-[180px] md:w-[596px]">
+              <div class="grid grid-cols-3 md:flex gap-3">
                 <img src="images/Group 13.png" alt="">
                 <p>560</p>
                 <img src="images/Group 16.png" alt="">
@@ -143,7 +143,7 @@ const newContant = (data) => {
 
   const newdiv = document.createElement("div");
   newdiv.setAttribute("id", `${data.id}`);
-  newdiv.innerHTML = `<div class="flex justify-between  text-black bg-white mx-8 p-4 rounded-3xl mt-6">
+  newdiv.innerHTML = `<div class="md:flex justify-between  text-black bg-white mx-3 md:mx-8 p-4 rounded-3xl mt-6">
                     <h1>${data.title}</h1>
                     <div class="flex gap-3 ">
                         <img class="w-7 h-7" src="images/Group 16.png" alt="">
@@ -180,7 +180,8 @@ const latestPostDisplay = (data) => {
   const currentDiv = document.getElementById("latestPost");
   data.forEach((dt) => {
     const newDiv = document.createElement("div");
-    newDiv.classList = "card h-[482px] w-96 shadow-xl border-2 border-gray-400";
+    newDiv.classList =
+      "card h-[482px]  md:w-96 shadow-xl border-2 border-gray-400 mt-10 ";
     newDiv.innerHTML = ` <figure>
                             <img class="w-[326px] h-[190px] mt-6 rounded-lg"
                                 src="${dt.cover_image}"
